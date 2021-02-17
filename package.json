@@ -1,0 +1,19 @@
+{
+  "name": "assalamcgl",
+  "productName": "As-Salam CGL App",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "As-Salam CGL Team",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^11.2.3"
+  },
+  "devDependencies": {
+    "electron-packager": "^15.2.0",
+    "electron-winstaller": "^4.0.2"
+  },
+  "description": "Aplikasi clinet untuk TV Masjid"
+}
