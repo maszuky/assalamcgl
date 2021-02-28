@@ -10,10 +10,11 @@ const {
 } = electron
 
 let mainWindow
-const display = 'http://assalamcgl.com/front';
+const display = 'http://localhost';
+const pengaturan = 'http://localhost/settings';
 const ipcam = 'http://192.168.1.160:8080/jsfs.html';
 const path = require('path')
-const modalPath = path.join('file://', __dirname, 'index.html')
+//const modalPath = path.join('file://', __dirname, 'index.html')
 
 app.on('ready', () => {
   const {width, height} = electron.screen.getPrimaryDisplay().workAreaSize
@@ -46,7 +47,7 @@ menu.append(new MenuItem({ type: 'separator' }))
 menu.append(new MenuItem({
   label: 'Pengaturan (CTRL + P)',
   click() {
-    mainWindow.loadURL(modalPath)
+    mainWindow.loadURL(pengaturan)
     mainWindow.show()
   }
 }))
@@ -87,7 +88,7 @@ app.on('ready', () => {
 })
 app.on('ready', () => {
   globalShortcut.register('CommandOrControl+p', () => {
-    mainWindow.loadURL(modalPath)
+    mainWindow.loadURL(pengaturan)
   })
 })
 app.on('will-quit', () => {
