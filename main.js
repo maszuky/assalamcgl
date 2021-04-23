@@ -12,7 +12,6 @@ const {
 let mainWindow
 const display = 'http://localhost';
 const pengaturan = 'http://localhost/settings';
-const ipcam = 'http://192.168.1.160:8080/jsfs.html';
 const path = require('path')
 //const modalPath = path.join('file://', __dirname, 'index.html')
 
@@ -31,14 +30,6 @@ menu.append(new MenuItem({
   label: 'Diplay (CTRL + X)',
   click() {
     mainWindow.loadURL(display)
-    mainWindow.show()
-  }
-}))
-
-menu.append(new MenuItem({
-  label: 'Live Video (CTRL + L)',
-  click() {
-    mainWindow.loadURL(ipcam)
     mainWindow.show()
   }
 }))
@@ -79,11 +70,6 @@ app.on('ready', () => {
 app.on('ready', () => {
   globalShortcut.register('CommandOrControl+x', () => {
     mainWindow.loadURL(display)
-  })
-})
-app.on('ready', () => {
-  globalShortcut.register('CommandOrControl+l', () => {
-    mainWindow.loadURL(ipcam)
   })
 })
 app.on('ready', () => {
